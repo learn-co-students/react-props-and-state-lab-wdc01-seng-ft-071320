@@ -24,16 +24,17 @@ class App extends React.Component {
   }
 
   onAdoptPet = (petId) => {
-    let x = this.state.pets.find(pet => pet.id === petId)
-    x.isAdopted = true
-
-    // this.setState({
+    let newPetsArray = this.state.pets.map(pet => {
+      return pet.id === petId ? {...pet, isAdopted: true} : pet
+    })
+    
+  // this.setState({
     //   x.isAdopted : true
     //   })
 
-    // this.setState({
-    //   pets: [...this.state.pets, ]
-    // })
+    this.setState({
+      pets: newPetsArray
+    })
   }
 
   onFindPetsClick = () => {
