@@ -27,10 +27,6 @@ class App extends React.Component {
     let newPetsArray = this.state.pets.map(pet => {
       return pet.id === petId ? {...pet, isAdopted: true} : pet
     })
-    
-  // this.setState({
-    //   x.isAdopted : true
-    //   })
 
     this.setState({
       pets: newPetsArray
